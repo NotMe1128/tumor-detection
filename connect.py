@@ -4,6 +4,7 @@ import tumor_model as tumor
 import pickle
 import cv2
 import numpy as np
+import os
 app = Flask(__name__)
 
 with open("my_dict.pkl", "rb") as f:
@@ -26,28 +27,41 @@ from werkzeug.utils import secure_filename
 
 
 @app.route('/tumor', methods=['POST'])
-def upload_file():
-    print("file received")
-    if 'file' not in request.files:
-        return jsonify({'error': 'No file part'}), 400
-    file = request.files['file']
-    filename = secure_filename(file.filename)
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image part'}), 400
+
+    image = request.files['image']
+    if image.filename == '':
+        return jsonify({'error': 'No selected image'}), 400
     try:
         # Process the file and generate output
-        output = process_image(file)
-        return jsonify({'result': output})
+        output=process_image()
+        return output
+        #return jsonify({'result': output})
     except Exception as e:
         # Handle exceptions and send back an error message
         return jsonify({'error': str(e)}), 500
 
-def process_image(file):
-    img = cv2.imread(file)
-    img = cv2.resize(img,(150,150))
-    img_array = np.array(img)
-    img_array = img_array.reshape(1,150,150,3)
-    print((img_array).shape())
-    res=tumor.pred_tumor(img_array)
-    return res
+def process_image():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image part'}), 400
+
+    image = request.files['image']
+    if image.filename == '':
+        return jsonify({'error': 'No selected image'}), 400
+
+    if image:
+        filename = secure_filename(image.filename)
+        filepath = os.path.join(os.getcwd(), filename)
+        image.save(filepath)
+   
+        img = cv2.imread(filepath)
+        img = cv2.resize(img, (150, 150))
+        img_array = img.reshape(1, 150, 150, 3)
+        res=tumor.pred_tumor(img_array)
+    
+    return render_template('output.html', output=res)
 
 
 @app.route('/submitdata', methods=['POST'])
