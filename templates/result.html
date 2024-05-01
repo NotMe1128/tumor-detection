@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Convid</title>
+      <title>Disease Prediction</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -31,6 +31,17 @@
       <link rel="stylesheet" href="/static/jquery.fancybox.min.css" media="screen">
    <style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
    <body>
+      <script>
+         // Smooth scroll behavior
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+                 document.querySelector(this.getAttribute('href')).scrollIntoView({
+                     behavior: 'smooth'
+                 });
+             });
+         });
+     </script>
       <!--header section start -->
       <div class="header_section">
          
@@ -45,7 +56,7 @@
                            <div class="container">
                               <h1 class="banner_taital">Result</h1>
                               <p class="banner_text">You are diagonised with {{output}}.</p>
-                              <div class="more_bt"><a href="http://127.0.0.1:5501/index.html#">Read More</a></div>
+                              <div class="more_bt"><a href="#information">Read More</a></div>
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -59,7 +70,7 @@
                            <div class="container">
                               <h1 class="banner_taital">Result</h1>
                               <p class="banner_text">You are diagonised with {{output}}.</p>
-                              <div class="more_bt"><a href="http://127.0.0.1:5501/index.html#">Read More</a></div>
+                              <div class="more_bt"><a href="#information">Read More</a></div>
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -72,8 +83,8 @@
                         <div class="col-md-6">
                            <div class="container">
                               <h1 class="banner_taital">Result</h1>
-                              <p class="banner_text">You are diagonised with CANCER</p>
-                              <div class="more_bt"><a href="http://127.0.0.1:5501/index.html#">Read More</a></div>
+                              <p class="banner_text">You are diagonised with {{output}}</p>
+                              <div class="more_bt"><a href="#information">Read More</a></div>
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -116,7 +127,8 @@
       </div>
       <!-- protect section end -->
       <!-- about section start -->
-      <div class="about_section layout_padding">
+      <section id="information">
+      <div class="about_section layout_padding" id="information">
          <div class="container">
             <div class="row">
                <div class="col-md-6">
@@ -130,6 +142,7 @@
             </div>
          </div>
       </div>
+      </section>
       <!-- about section end -->
       <!-- doctor section start -->
       
@@ -187,24 +200,23 @@
                      <h2 class="useful_text">Resources</h2>
                      <div class="footer_menu">
                         <ul>
-                           <li><a href="http://127.0.0.1:5501/index.html#">Disease List</a></li>
-                           <li><a href="http://127.0.0.1:5501/index.html#">Symptom List</a></li>
-                           <li><a href="http://127.0.0.1:5501/index.html#">Doctors</a></li>
-                           <li><a href="http://127.0.0.1:5501/index.html#">Precautions</a></li>
-                           <li><a href="http://127.0.0.1:5501/index.html#">Care</a></li>
+                           <li><a href="{{ url_for('home') }}">Home</a></li>
+                           <li><a href="{{ url_for('website') }}">Disease Prediction</a></li>
+                           <li><a href="{{ url_for('tumor_detect') }}">Tumor Detection</a></li>
+                           <li><a href="https://www.netmeds.com">Online Medicines</a></li>
                         </ul>
                      </div>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                      <h2 class="useful_text">About</h2>
-                     <p class="footer_text">This Website is powered by Disease Predict System Ltd.</p>
+                     <p class="footer_text">This Website is powered by Healthcare Web</p>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                      <h2 class="useful_text">Contact Us</h2>
                      <div class="location_text">
                         <ul>
                            <li>
-                              <a href="http://127.0.0.1:5501/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <a href="https://www.google.com/maps?q=RAIT+dypatil+nerul"><i class="fa fa-map-marker" aria-hidden="true"></i>
                               <span class="padding_15">Location</span></a>
                            </li>
                            <li>
@@ -212,8 +224,8 @@
                               <span class="padding_15">Call +91 93070 38865</span></a>
                            </li>
                            <li>
-                              <a href="http://127.0.0.1:5501/index.html#"><i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span class="padding_15">support@diseasepredict.com</span></a>
+                              <a href="mailto:support@healthcareweb.com?subject=Contact%20to%20Healthcare%20Web"><i class="fa fa-envelope" aria-hidden="true"></i>
+                              <span class="padding_15">support@healthcareweb</span></a>
                            </li>
                         </ul>
                      </div>
@@ -232,7 +244,7 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <p class="copyright_text">© 2023 All Rights Reserved.<a href="https://html.design/"> Disease Prediction System</a></p>
+                  <p class="copyright_text">© 2024 All Rights Reserved.<a href="https://html.design/"> Disease Prediction System</a></p>
                </div>
             </div>
          </div>
