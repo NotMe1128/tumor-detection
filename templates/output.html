@@ -3,156 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="templates/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <title>Image Processing Output</title>
-    <style>
-        .navbar-brand span {
-        font-weight: bold;
-        font-size: 24px;
-        color: #ffffff;
-        text-transform: uppercase;
-        }
-
-        .custom_nav-container {
-        padding: 0;
-        }
-
-        .custom_nav-container .navbar-nav {
-        margin-left: auto;
-        }
-
-        .custom_nav-container .navbar-nav .nav-item .nav-link {
-        padding: 5px 20px;
-        color: #ffffff;
-        text-align: center;
-        text-transform: uppercase;
-        border-radius: 5px;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        }
-
-        .custom_nav-container .nav_search-btn {
-        width: 35px;
-        height: 35px;
-        padding: 0;
-        border: none;
-        color: #ffffff;
-        }
-
-        .custom_nav-container .nav_search-btn:hover {
-        color: #a973eb;
-        }
-
-        .custom_nav-container .navbar-toggler {
-        outline: none;
-        }
-
-        .custom_nav-container .navbar-toggler {
-        padding: 0;
-        width: 37px;
-        height: 42px;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        }
-
-        .custom_nav-container .navbar-toggler span {
-        display: block;
-        width: 35px;
-        height: 4px;
-        background-color: #ffffff;
-        margin: 7px 0;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        position: relative;
-        border-radius: 5px;
-        transition: all 0.3s;
-        }
-
-        .custom_nav-container .navbar-toggler span::before, .custom_nav-container .navbar-toggler span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #ffffff;
-        top: -10px;
-        border-radius: 5px;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        }
-
-        .custom_nav-container .navbar-toggler span::after {
-        top: 10px;
-        }
-
-        .custom_nav-container .navbar-toggler[aria-expanded="true"] {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-        }
-
-        .custom_nav-container .navbar-toggler[aria-expanded="true"] span {
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-        }
-
-        .custom_nav-container .navbar-toggler[aria-expanded="true"] span::before, .custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
-        -webkit-transform: rotate(90deg);
-                transform: rotate(90deg);
-        top: 0;
-
-        .header_section {
-        padding: 15px 0;
-        }
-
-        .header_section .container-fluid {
-        padding-right: 25px;
-        padding-left: 25px;
-        }
-        }
-    </style>
 </head>
 <body>
-    <div class="hero_area">
-    <header class="header_section">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
-              <span>
-                HealthcareWeb
-              </span>
-            </a>
-  
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-  
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('website') }}"> Disease Prediction</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('tumor_detect') }}">Tumor Detection</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="doctors.html">Doctors</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-                <form class="form-inline">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-    </div>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">HealthcareWeb</label>
+        <ul>
+          <li><a class="active" href="def.html">Home</a></li>
+          <li><a href="{{ url_for('website') }}">Disease Prediction</a></li>
+          <li><a href="{{ url_for('tumor_detect') }}">Tumor Detection</a></li>
+        </ul>
+      </nav>
     <h1>Processed Image Output</h1>
     {{output}}
     <!-- Add other relevant output information here -->
