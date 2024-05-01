@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="templates/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <title>Image Upload</title>
     <style>
         .upload-container {
@@ -21,7 +26,7 @@
         }
 
         .custom-file-input {
-            background-color: #007bff;
+            background-color: #a46dfc;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -30,7 +35,7 @@
         }
 
         .custom-file-input:hover {
-            background-color: #0056b3;
+            background-color: #8038f3;
         }
 
         .upload-button {
@@ -50,12 +55,27 @@
     </style>
 </head>
 <body>
-  <h1>Upload an Image</h1>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">HealthcareWeb</label>
+    <ul>
+      <li><a class="active" href="def.html">Home</a></li>
+      <li><a href="{{ url_for('website') }}">Disease Prediction</a></li>
+      <li><a href="{{ url_for('tumor_detect') }}">Tumor Detection</a></li>
+    </ul>
+  </nav>
+  <h1><center>Upload an Image</center></h1>
   <div class="upload-container">
       <form action="/tumor" method="POST" enctype="multipart/form-data">
           <label for="file-upload" class="custom-file-input">Choose File</label>
           <input type="file" id="file-upload" name="image" onchange="displayFileName(this)">
           <input type="submit" value="Upload" class="upload-button">
+          <div id="upload-image">
+            <img src="../static/drag.png">
+        </div>
       </form>
       <p id="file-name"></p>
   </div>
