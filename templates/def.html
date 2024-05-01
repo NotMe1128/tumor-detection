@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="static/images/favicon.png" type="">
 
-  <title> Healthcare Web </title>
+  <title> HealthWeb </title>
 <style>
   /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10187,7 +10187,7 @@ body {
           align-items: flex-start;
 }
 
-.heading_container h2 {
+.heading_container h2,h4 {
   position: relative;
   font-weight: bold;
   margin-bottom: 0;
@@ -11076,7 +11076,7 @@ a:focus {
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Healthcare Web
+              HealthcareWeb
             </span>
           </a>
 
@@ -11094,6 +11094,12 @@ a:focus {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('tumor_detect') }}">Tumor Detection</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="departments.html">Our Services</a>
               </li>
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -11116,10 +11122,10 @@ a:focus {
                 <div class="col-md-7">
                   <div class="detail-box">
                     <h1>
-                      We Provide Best Healthcare Services
+                      Your Health is important.
                     </h1>
                     <p>
-                      Welcome to Healthcare Web, a Website where you can Care for your overall health. You can check if your symptoms are serious or not and a few precautionary steps on our Disease Prediction Portal. We also have an MRI image Tumor Detection Service to aid doctors with Diagnosis of Brain Tumors.
+                      We provide services to check about health of your body which can help you in taking proper steps to improve your health.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -11137,10 +11143,10 @@ a:focus {
                 <div class="col-md-7">
                   <div class="detail-box">
                     <h1>
-                      Disease Prediciton Service
+                      Your Health is important.
                     </h1>
                     <p>
-                      Disease Prediction with the Symptoms. 
+                      We provide services to check about health of your body which can help you in taking proper steps to improve your health.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -11158,10 +11164,10 @@ a:focus {
                 <div class="col-md-7">
                   <div class="detail-box">
                     <h1>
-                      Tumor Detection Service
+                      Your Health is important.
                     </h1>
                     <p>
-                      Tumor detection using MRI images
+                      We provide services to check about health of your body which can help you in taking proper steps to improve your health.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -11193,10 +11199,10 @@ a:focus {
       <div class="container ">
         <div class="heading_container heading_center">
           <h2>
-            Our Departments
+            Our Services
           </h2>
           <p>
-            We also have various departments all aiming towards keeping you healthy!
+            We have a disease prediction as well as tumor detection system.
           </p>
         </div>
         <div class="row">
@@ -11207,7 +11213,7 @@ a:focus {
               </div>
               <div class="detail-box">
                 <h5>
-                  Disease Prediction
+                  Cardiology
                 </h5>
                 <p>
                   fact that a reader will be distracted by the readable page when looking at its layout.
@@ -11222,10 +11228,10 @@ a:focus {
               </div>
               <div class="detail-box">
                 <h5>
-                  Diagnosis
+                  Disease Prediction
                 </h5>
                 <p>
-                  fact that a reader will be distracted by the readable page when looking at its layout.
+                  This system predicts what disease the patient has according to the symptoms selected by patient from various symptoms provided.
                 </p>
               </div>
             </div>
@@ -11240,7 +11246,7 @@ a:focus {
                   Tumor Detection
                 </h5>
                 <p>
-                  fact that a reader will be distracted by the readable page when looking at its layout.
+                  This system takes MRI Images as input and detects if the patient has tumor or not.
                 </p>
               </div>
             </div>
@@ -11252,7 +11258,7 @@ a:focus {
               </div>
               <div class="detail-box">
                 <h5>
-                  First Aid helpline
+                  First Aid
                 </h5>
                 <p>
                   fact that a reader will be distracted by the readable page when looking at its layout.
@@ -11260,9 +11266,8 @@ a:focus {
               </div>
             </div>
           </div>
-        </div>
         <div class="btn-box">
-          <a href="">
+          <a href="departments.html">
             View All
           </a>
         </div>
@@ -11290,12 +11295,13 @@ a:focus {
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              Welcome to our Disease Prediction with Tumor Detection project! We are dedicated to revolutionizing healthcare by leveraging cutting-edge technology to improve disease detection and patient outcomes.
             </p>
-            <a href="">
+              <h4>Our Mission</h4>
+            <p>
+            Our mission is to provide individuals with a reliable and user-friendly platform for early disease prediction and tumor detection. We aim to empower users to take proactive steps towards their health and well-being by offering accurate predictions and personalized recommendations.
+            </p>  
+            <a href="about.html">
               Read More
             </a>
           </div>
@@ -11360,8 +11366,6 @@ a:focus {
   </section>
   <!-- end contact section -->
 
-
-
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
@@ -11372,7 +11376,7 @@ a:focus {
               Reach at..
             </h4>
             <div class="contact_link_box">
-              <a href="https://www.google.com/maps?q=RAIT+dypatil+nerul">
+              <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
@@ -11381,13 +11385,13 @@ a:focus {
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +91 93215 38930
+                  Call +91 9988767511
                 </span>
               </a>
-              <a href="mailto:support@healthcareweb.com?subject=Contact%20to%20Healthcare%20Web">
+              <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  support@healthcareweb.com
+                  demo@gmail.com
                 </span>
               </a>
             </div>
@@ -11413,7 +11417,7 @@ a:focus {
               About
             </h4>
             <p>
-              Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
+              Welcome to our Disease Prediction with Tumor Detection project! We are dedicated to revolutionizing healthcare by leveraging cutting-edge technology to improve disease detection and patient outcomes.
             </p>
           </div>
         </div>
@@ -11456,7 +11460,7 @@ a:focus {
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Healthcare Web<br><br></a>
+          <a href="https://html.design/">HealthcareWeb<br><br></a>
         </p>
        
       </div>  
@@ -11465,17 +11469,17 @@ a:focus {
   <!-- footer section -->
 
   <!-- jQery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="D:\Ayush\DYPU\Mini Project\Sem 5\tumor-detection-main\templates\js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="D:\Ayush\DYPU\Mini Project\Sem 5\tumor-detection-main\templates\js/bootstrap.js"></script>
   <!-- owl slider -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <!-- custom js -->
-  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="D:\Ayush\DYPU\Mini Project\Sem 5\tumor-detection-main\templates\js/custom.js"></script>
   <!-- Google Map --
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&center=19.076097,73.016867"></script>
 
