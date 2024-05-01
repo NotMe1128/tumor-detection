@@ -5,6 +5,7 @@ import pickle
 import cv2
 import numpy as np
 import os
+from string import capwords
 app = Flask(__name__)
 
 with open("my_dict.pkl", "rb") as f:
@@ -52,17 +53,26 @@ def process_image():
         return jsonify({'error': 'No selected image'}), 400
 
     if image:
-        filename = secure_filename(image.filename)
-        filepath = os.path.join(os.getcwd(), filename)
+        filename = "output.jpg"  # Set the desired output filename
+        static_folder = os.path.join(os.getcwd(), "static")
+        filepath = os.path.join(static_folder, filename)
         image.save(filepath)
    
         img = cv2.imread(filepath)
         img = cv2.resize(img, (150, 150))
         img_array = img.reshape(1, 150, 150, 3)
         res=tumor.pred_tumor(img_array)
+        reason=" "
+        if res=="no tumor":
+            reason="Your brain MRI looks healthy!"
+        else:
+            reason="Seek Medical attention immediately!"
     
-    return render_template('output.html', output=res)
+    return render_template('output.html', output=capwords(res), reason=reason)
 
+@app.route('/def', methods=['POST','GET'])
+def home():
+    return render_template('def.html')
 
 @app.route('/submitdata', methods=['POST'])
 def process_symptoms():
