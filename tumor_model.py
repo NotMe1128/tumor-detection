@@ -6,4 +6,11 @@ model = load_model('tumorr.keras')
 def pred_tumor(data):
     a=model.predict(data)
     indices = a.argmax()
-    return indices 
+    if indices==0:
+        return "glioma_tumor" 
+    elif indices==1:
+        return "meningioma"
+    elif indices==2:
+        return "no tumor"
+    else:
+        return "pituitary tumor"
